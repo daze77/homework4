@@ -53,22 +53,16 @@ function questionroulette(){
         alert("You are done!  Breathe!!!!");
     } else {
         document.querySelector(".nextQuestion").innerHTML = questions[questionsNo];
-        document.querySelector(".questionresponses").innerHTML= array()
-
-
+        document.querySelector(".questionresponses").innerHTML="";
+        for (var i=0; i < questionresponses[index].length; i++){
+            document.querySelector(".questionresponses").innerHTML += '<input type="radio" name="ans" value="' + questionresponses[index][i] + '"/>' + '<label>' + questionresponses[index][i] + '</label>'
         }
+    
+        console.log("did this work?")
+        console.log(questionresponses[index])
+        index++
     }
-
-    function array(){
-    for (var i=0; i < questionresponses[index].length; i++){
-        document.querySelector(".questionresponses").innerHTML += '<input type="radio" name="ans" value="' + questionresponses[index][i] + '"/>' + '<label>' + questionresponses[index][i] + '</label>'
-    }
-
-console.log("did this work?")
-index++
-
-    }
-
+}
 
 
 
