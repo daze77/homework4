@@ -21,5 +21,5 @@ You are presented with an option to retake the quiz should you be inclined to do
 ## __Following are some images of the application as a reference:__
 
 ![Start Page](/Assets/images/startPage.png)
-![Quesitons Page](/Assets/images/questionsPagePage.png)
+![Quesitons Page](/Assets/images/questionsPage.png)
 ![Finish Page](/Assets/images/finishPage.png)
