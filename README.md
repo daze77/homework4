@@ -16,6 +16,10 @@ Once all questions have been answered you are pushed to a final page with your s
 You are presented with an option to retake the quiz should you be inclined to do so.
 
 ## __A link to the git repo housing this application can be found here:__
+https://github.com/daze77/javascriptquiz
+
+## __This is a link to the live webpage housing this application__
+https://daze77.github.io/javascriptquiz/
 
 
 ## __Following are some images of the application as a reference:__
