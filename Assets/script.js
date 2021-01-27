@@ -68,7 +68,7 @@ function questionroulette(){
     var currentquestion = questions[questionNo]
     var questionEl = document.querySelector('.nextQuestion')
     // display the question within the <h3> header
-    questionEl.innerHTML = `<h3>${currentquestion}</h3>`
+    questionEl.innerHTML = `<h3>${currentquestion}</h3><br><br>`
   
     // loop through and show each answer as a button
     for( var i=0; i < questionresponses[questionNo].length; i++ ){
