@@ -5,9 +5,6 @@ console.log("Page Loaded")
 
 
 
-
-
-
 //global variables to be used for entire JS
 
 var questions = [
@@ -39,6 +36,7 @@ var questionanswers = [
 
 var score
 var timer
+var personsname
 
 
 
@@ -48,6 +46,7 @@ function startGame(){
     timer = 90
     score = 0
     questionNo = 0
+    
     //hide eveything but the start button to start the game
     document.querySelector('#timer').classList.remove('d-none')
     document.querySelector('#timerheader').classList.remove('d-none')
@@ -121,14 +120,72 @@ function done(){
     document.querySelector('#quizOver').classList.remove('d-none')
     document.querySelector('#questioncards').classList.add('d-none')
     clearInterval(timeercountdown)
+    
+    //save the scores to local storage
+    function savescoreboard(){
+      //call local storage
+      var scoreboard = JSON.parse(localStorage.getItem("scoreboard")) || [];
+      console.log(scoreboard)
+      //add current inform to scoreboard - via push
+      var yourscore = {
+        scoreboardname: personsname,
+        scoreboardscore: score,
+      };
+      console.log(yourscore)
+      //this is the push
+      scoreboard.push(yourscore);
+      //put new scoreboard back into local storage
+      localStorage.setItem("scoreboard", JSON.stringify(scoreboard));
+
+      scoreboard.sort(function(a,b){
+        return b.scoreboardscore - a.scoreboardscore;
+      });
+      scoreboard.forEach(function(scoreboardscore){
+        var litag = document.createElement("li");
+        litag.textContent= scoreboardscore.scoreboardname + "-" + scoreboardscore.scoreboardscore;
+        var lsb = document.querySelector("#scoreboard");
+        lsb.appendChild(litag);
+      })
 
 
+    }
+    savescoreboard()
+   
 }
 
 function restart(event){
+  event.preventDefault();
+  
     location.reload();
 }
 
+//new code I forgot to build - log user name and score
 
 
-startBtn.addEventListener("click", startGame)
+
+// var scoreboard = {
+//   scoreboardname: document.querySelector("#name").value,
+//   scoreboardscore: document.querySelector("#score").value,
+//   }
+
+ 
+// console.log( `scoreboard contents: `, scoreboard )
+// localStorage.scoreboard = JSON.stringify( scoreboard )
+// console.log( `.. scoreboard saved as: `, localStorage.scoreboard )
+
+
+
+
+// if( localStorage.scoreboard ){
+//   var scoreboard = JSON.parse( localStorage.scoreboard )
+//   console.log( ` found saved Scoreboard: `, scoreboard )
+// }
+
+
+
+startBtn.addEventListener("click", function(event){
+  event.preventDefault();
+  personsname = document.querySelector('#name').value
+ startGame()
+
+})

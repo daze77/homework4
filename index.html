@@ -32,14 +32,17 @@
             <form  id=questioncards>
                 <!--Questions will get plugged in here-->
                 <div class="container card nextQuestion d-grid gap-2 d-md-block py-3">
+                    <div class="input-group mb-4">
+                        <input type="text" class="form-control" placeholder="Please Enter Your Name" aria-label="Username" id="name">
+                      </div>
                     <button class="mx-auto" style ="width: 100%" id="goTime">START</button>
-
                 </div>
             </form>
             <div id=quizOver class="d-none">
-                <h4 class="text-success">Thank you for completing the quiz!</h4>
+                <h4 class="text-success">Thank you for completing the quiz!  Please see a ranking of high scores below</h4>
                 <br>
                 <br>
+                <div id="scoreboard"></div>
                 <br>
                 <br>
                 <button onclick="restart(event)" id="restart" class="mx-auto" style="width: 100%;">Press to Start Again</button>       
