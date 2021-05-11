@@ -12,22 +12,20 @@
 
 
     <div class="container">
-        <div class="">
-            <h1 class="text-center p-3">The Super Easy javaScript Quiz</h1>
-            <p class="d-grid gap-2 d-md-block"><span class="badge bg-secondary p-2 text-wrap lh-base">Welcome to the javaScript Quiz.  Take your time.  Each correct answer will gain you 1 point.  Each incorrect answer will decuct 10 seconds from the clock.  Good Luck!</span></p>
-            <br>
-            <br>     
-            <div id="timerheader" class="d-none float-start">Timer: 
-                <h3 id="timer" class="d-none" > </h3>
-            </div>
-            <div id="scoreheader" class="d-none float-end">Score:
-                <h3 id="score" class="d-none"></h3>
+        <h1 class="text-center p-3">The Super Easy JavaScript Quiz</h1>
+        <div class="container">
+            <div class="d-flex px-5 bd-highlight" id="startMessage"><p>Welcome to the javaScript Quiz.  Take your time.  Each correct answer will gain you 1 point.  Each incorrect answer will decuct 10 seconds from the clock.  Good Luck!</p></div>
+            <div class="clearfix">
+
+                <div id="timerheader" class="d-none float-start">Timer 
+                    <h3 id="timer" class="d-none" > </h3>
+                </div>
+                <div id="scoreheader" class="d-none float-end">Score
+                    <h3 id="score" class="d-none"></h3>
+                </div>
             </div>
         </div>
-           
-        <div class="container">
-            <br>
-            <br>
+        <div class="container px-5">
             <br>
             <form  id=questioncards>
                 <!--Questions will get plugged in here-->
@@ -35,17 +33,20 @@
                     <div class="input-group mb-4">
                         <input type="text" class="form-control" placeholder="Please Enter Your Name" aria-label="Username" id="name">
                       </div>
-                    <button class="mx-auto" style ="width: 100%" id="goTime">START</button>
+                    <button type="button" class="btn-success mx-auto" style ="width: 100%" id="goTime">START</button>
                 </div>
             </form>
             <div id=quizOver class="d-none">
                 <h4 class="text-success">Thank you for completing the quiz!  Please see a ranking of high scores below</h4>
                 <br>
                 <br>
-                <div id="scoreboard"></div>
+
+                <ul class="list-group list-group-flush p-5" id="scoreboard">
+                </ul>
                 <br>
                 <br>
-                <button onclick="restart(event)" id="restart" class="mx-auto" style="width: 100%;">Press to Start Again</button>       
+
+                <button type="button" onclick="restart(event)" id="restart" class="btn btn-success mx-auto" style="width: 100%;">Press to Start Again</button>       
             </div>
         </div>
     </div>
